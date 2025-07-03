@@ -25,7 +25,7 @@ function App() {
         console.log('REACT_APP_API_URL específica:', process.env.REACT_APP_API_URL);
 
         
-        const response = await axios.get(`${process.env.REACT_APP_API_URL}/api/history`, {
+        const response = await axios.get(`/api/history`, {
           headers: { 'x-user-id': userId }
         });
         setChatHistory(response.data?.history || response.data?.chats || []);
@@ -46,7 +46,7 @@ function App() {
     
     try {
       const response = await axios.post(
-        `${process.env.REACT_APP_API_URL}/api/functions`,
+        `/api/functions`,
         { question: input, style: "default" },
         {
           headers: { 'x-user-id': userId },
@@ -77,7 +77,7 @@ function App() {
     try {
       setIsLoading(true);
       const response = await axios.post(
-        `${process.env.REACT_APP_API_URL}/api/functions`,
+        `/api/functions`,
         { action: "load_chat" },
         {
           headers: { 'x-user-id': userId },
