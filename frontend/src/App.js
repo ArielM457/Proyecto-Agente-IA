@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import './App.css';  // Esta línea debe estar al inicio con las demás importaciones
+import './App.css';  
 import axios from 'axios';
 import ReactMarkdown from 'react-markdown';
 import { 
@@ -7,6 +7,8 @@ import {
 } from '@mui/material';
 import SendIcon from '@mui/icons-material/Send';
 import HistoryIcon from '@mui/icons-material/History';
+import config from './config';
+
 
 function App() {
   const [input, setInput] = useState('');
@@ -25,7 +27,7 @@ function App() {
         console.log('REACT_APP_API_URL específica:', process.env.REACT_APP_API_URL);
 
         
-        const response = await axios.get(`/api/history`, {
+        const response = await axios.get(`${config.API_URL}/api/history`, {
           headers: { 'x-user-id': userId }
         });
         setChatHistory(response.data?.history || response.data?.chats || []);
@@ -46,7 +48,7 @@ function App() {
     
     try {
       const response = await axios.post(
-        `/api/functions`,
+        `${config.API_URL}/api/functions`,
         { question: input, style: "default" },
         {
           headers: { 'x-user-id': userId },
@@ -77,7 +79,7 @@ function App() {
     try {
       setIsLoading(true);
       const response = await axios.post(
-        `/api/functions`,
+          `${config.API_URL}/api/functions`,
         { action: "load_chat" },
         {
           headers: { 'x-user-id': userId },
