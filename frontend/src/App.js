@@ -3,7 +3,7 @@ import './App.css';  // Esta línea debe estar al inicio con las demás importac
 import axios from 'axios';
 import ReactMarkdown from 'react-markdown';
 import { 
-  Box, Button, CircularProgress, Typography 
+  CircularProgress, Typography 
 } from '@mui/material';
 import SendIcon from '@mui/icons-material/Send';
 import HistoryIcon from '@mui/icons-material/History';
