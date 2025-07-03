@@ -23,6 +23,8 @@ function App() {
       try {
         console.log('Todas las variables de entorno:', process.env);
         console.log('REACT_APP_API_URL específica:', process.env.REACT_APP_API_URL);
+
+        
         const response = await axios.get(`${process.env.REACT_APP_API_URL}/api/history`, {
           headers: { 'x-user-id': userId }
         });
