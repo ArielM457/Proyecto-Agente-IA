@@ -1,4 +1,5 @@
 # 🚀 Vexa - Agente de IA Conversacional 
+![image](https://github.com/user-attachments/assets/9b72dd22-174b-4ac9-9696-c4325eacad35)
 
 ![Azure Static Web Apps](https://img.shields.io/badge/Azure-Functions-orange) ![React](https://img.shields.io/badge/Frontend-React-blue) ![OpenAI](https://img.shields.io/badge/Powered%20by-Azure%20OpenAI-green)
 
